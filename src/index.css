@@ -149,28 +149,46 @@ button:focus-visible {
   min-height: 0;
 }
 
-/* Fixed board container to fully encompass all cards without gaps */
 /* Responsive organic board layout */
 .board {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
   gap: clamp(8px, 1.5vw, 20px);
   padding: clamp(12px, 2vw, 24px);
   width: 100%;
   height: 100%;
   max-width: min(1400px, 95vw);
+  max-height: 100%;
   background: rgba(255, 255, 255, 0.02);
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  align-content: stretch;
-  align-items: stretch;
+  grid-auto-rows: minmax(0, 1fr);
+}
+
+/* Responsive grid columns based on viewport */
+@media (min-width: 480px) {
+  .board {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .board {
+    grid-template-columns: repeat(10, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .board {
+    grid-template-columns: repeat(12, 1fr);
+  }
 }
 
 @media (min-width: 1600px) {
   .board {
+    grid-template-columns: repeat(14, 1fr);
     gap: clamp(16px, 2vw, 28px);
     max-width: min(1800px, 95vw);
   }
@@ -193,6 +211,7 @@ button:focus-visible {
 
 @media (min-width: 2000px) {
   .board {
+    grid-template-columns: repeat(16, 1fr);
     gap: clamp(20px, 2.5vw, 36px);
     max-width: min(2200px, 95vw);
   }
@@ -215,6 +234,7 @@ button:focus-visible {
 
 @media (min-width: 3000px) {
   .board {
+    grid-template-columns: repeat(20, 1fr);
     gap: 40px;
     max-width: min(3000px, 95vw);
   }
