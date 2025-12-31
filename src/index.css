@@ -53,6 +53,61 @@ h1 {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+:root {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.95);
+
+  /* Modern color palette with gradients */
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --accent-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --card-bg: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  --board-bg: radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.15), transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(245, 87, 108, 0.15), transparent 50%),
+    linear-gradient(180deg, #0f1419 0%, #1a1f2e 100%);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0f1419;
+  color: white;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  overflow: auto;
+}
+
+a {
+  font-weight: 500;
+  color: #667eea;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #764ba2;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.1;
+  font-weight: 800;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
 button {
   border-radius: 12px;
@@ -435,6 +490,695 @@ button:focus-visible {
   .scoreboard > div {
     padding: 0.2rem 0.4rem;
     font-size: 0.75rem;
+  }
+
+  .board {
+    padding: 8px;
+    gap: 6px;
+  }
+}
+
+/* Add subtle animations for visual polish */
+@media (prefers-reduced-motion: no-preference) {
+  .card {
+    animation: cardAppear 0.4s ease-out backwards;
+  }
+
+  /* The following loop was converted from Sass to plain CSS */
+  .card:nth-child(1) {
+    animation-delay: calc(1 * 0.02s);
+  }
+  .card:nth-child(2) {
+    animation-delay: calc(2 * 0.02s);
+  }
+  .card:nth-child(3) {
+    animation-delay: calc(3 * 0.02s);
+  }
+  .card:nth-child(4) {
+    animation-delay: calc(4 * 0.02s);
+  }
+  .card:nth-child(5) {
+    animation-delay: calc(5 * 0.02s);
+  }
+  .card:nth-child(6) {
+    animation-delay: calc(6 * 0.02s);
+  }
+  .card:nth-child(7) {
+    animation-delay: calc(7 * 0.02s);
+  }
+  .card:nth-child(8) {
+    animation-delay: calc(8 * 0.02s);
+  }
+  .card:nth-child(9) {
+    animation-delay: calc(9 * 0.02s);
+  }
+  .card:nth-child(10) {
+    animation-delay: calc(10 * 0.02s);
+  }
+  .card:nth-child(11) {
+    animation-delay: calc(11 * 0.02s);
+  }
+  .card:nth-child(12) {
+    animation-delay: calc(12 * 0.02s);
+  }
+  .card:nth-child(13) {
+    animation-delay: calc(13 * 0.02s);
+  }
+  .card:nth-child(14) {
+    animation-delay: calc(14 * 0.02s);
+  }
+  .card:nth-child(15) {
+    animation-delay: calc(15 * 0.02s);
+  }
+  .card:nth-child(16) {
+    animation-delay: calc(16 * 0.02s);
+  }
+  .card:nth-child(17) {
+    animation-delay: calc(17 * 0.02s);
+  }
+  .card:nth-child(18) {
+    animation-delay: calc(18 * 0.02s);
+  }
+  .card:nth-child(19) {
+    animation-delay: calc(19 * 0.02s);
+  }
+  .card:nth-child(20) {
+    animation-delay: calc(20 * 0.02s);
+  }
+  .card:nth-child(21) {
+    animation-delay: calc(21 * 0.02s);
+  }
+  .card:nth-child(22) {
+    animation-delay: calc(22 * 0.02s);
+  }
+  .card:nth-child(23) {
+    animation-delay: calc(23 * 0.02s);
+  }
+  .card:nth-child(24) {
+    animation-delay: calc(24 * 0.02s);
+  }
+  .card:nth-child(25) {
+    animation-delay: calc(25 * 0.02s);
+  }
+  .card:nth-child(26) {
+    animation-delay: calc(26 * 0.02s);
+  }
+  .card:nth-child(27) {
+    animation-delay: calc(27 * 0.02s);
+  }
+  .card:nth-child(28) {
+    animation-delay: calc(28 * 0.02s);
+  }
+  .card:nth-child(29) {
+    animation-delay: calc(29 * 0.02s);
+  }
+  .card:nth-child(30) {
+    animation-delay: calc(30 * 0.02s);
+  }
+  .card:nth-child(31) {
+    animation-delay: calc(31 * 0.02s);
+  }
+  .card:nth-child(32) {
+    animation-delay: calc(32 * 0.02s);
+  }
+  .card:nth-child(33) {
+    animation-delay: calc(33 * 0.02s);
+  }
+  .card:nth-child(34) {
+    animation-delay: calc(34 * 0.02s);
+  }
+  .card:nth-child(35) {
+    animation-delay: calc(35 * 0.02s);
+  }
+  .card:nth-child(36) {
+    animation-delay: calc(36 * 0.02s);
+  }
+  .card:nth-child(37) {
+    animation-delay: calc(37 * 0.02s);
+  }
+  .card:nth-child(38) {
+    animation-delay: calc(38 * 0.02s);
+  }
+  .card:nth-child(39) {
+    animation-delay: calc(39 * 0.02s);
+  }
+  .card:nth-child(40) {
+    animation-delay: calc(40 * 0.02s);
+  }
+  .card:nth-child(41) {
+    animation-delay: calc(41 * 0.02s);
+  }
+  .card:nth-child(42) {
+    animation-delay: calc(42 * 0.02s);
+  }
+  .card:nth-child(43) {
+    animation-delay: calc(43 * 0.02s);
+  }
+  .card:nth-child(44) {
+    animation-delay: calc(44 * 0.02s);
+  }
+  .card:nth-child(45) {
+    animation-delay: calc(45 * 0.02s);
+  }
+  .card:nth-child(46) {
+    animation-delay: calc(46 * 0.02s);
+  }
+  .card:nth-child(47) {
+    animation-delay: calc(47 * 0.02s);
+  }
+  .card:nth-child(48) {
+    animation-delay: calc(48 * 0.02s);
+  }
+  .card:nth-child(49) {
+    animation-delay: calc(49 * 0.02s);
+  }
+  .card:nth-child(50) {
+    animation-delay: calc(50 * 0.02s);
+  }
+  .card:nth-child(51) {
+    animation-delay: calc(51 * 0.02s);
+  }
+  .card:nth-child(52) {
+    animation-delay: calc(52 * 0.02s);
+  }
+  .card:nth-child(53) {
+    animation-delay: calc(53 * 0.02s);
+  }
+  .card:nth-child(54) {
+    animation-delay: calc(54 * 0.02s);
+  }
+  .card:nth-child(55) {
+    animation-delay: calc(55 * 0.02s);
+  }
+  .card:nth-child(56) {
+    animation-delay: calc(56 * 0.02s);
+  }
+  .card:nth-child(57) {
+    animation-delay: calc(57 * 0.02s);
+  }
+  .card:nth-child(58) {
+    animation-delay: calc(58 * 0.02s);
+  }
+  .card:nth-child(59) {
+    animation-delay: calc(59 * 0.02s);
+  }
+  .card:nth-child(60) {
+    animation-delay: calc(60 * 0.02s);
+  }
+  .card:nth-child(61) {
+    animation-delay: calc(61 * 0.02s);
+  }
+  .card:nth-child(62) {
+    animation-delay: calc(62 * 0.02s);
+  }
+  .card:nth-child(63) {
+    animation-delay: calc(63 * 0.02s);
+  }
+  .card:nth-child(64) {
+    animation-delay: calc(64 * 0.02s);
+  }
+  .card:nth-child(65) {
+    animation-delay: calc(65 * 0.02s);
+  }
+  .card:nth-child(66) {
+    animation-delay: calc(66 * 0.02s);
+  }
+  .card:nth-child(67) {
+    animation-delay: calc(67 * 0.02s);
+  }
+  .card:nth-child(68) {
+    animation-delay: calc(68 * 0.02s);
+  }
+  .card:nth-child(69) {
+    animation-delay: calc(69 * 0.02s);
+  }
+  .card:nth-child(70) {
+    animation-delay: calc(70 * 0.02s);
+  }
+  .card:nth-child(71) {
+    animation-delay: calc(71 * 0.02s);
+  }
+  .card:nth-child(72) {
+    animation-delay: calc(72 * 0.02s);
+  }
+  .card:nth-child(73) {
+    animation-delay: calc(73 * 0.02s);
+  }
+  .card:nth-child(74) {
+    animation-delay: calc(74 * 0.02s);
+  }
+  .card:nth-child(75) {
+    animation-delay: calc(75 * 0.02s);
+  }
+  .card:nth-child(76) {
+    animation-delay: calc(76 * 0.02s);
+  }
+  .card:nth-child(77) {
+    animation-delay: calc(77 * 0.02s);
+  }
+  .card:nth-child(78) {
+    animation-delay: calc(78 * 0.02s);
+  }
+  .card:nth-child(79) {
+    animation-delay: calc(79 * 0.02s);
+  }
+  .card:nth-child(80) {
+    animation-delay: calc(80 * 0.02s);
+  }
+  .card:nth-child(81) {
+    animation-delay: calc(81 * 0.02s);
+  }
+  .card:nth-child(82) {
+    animation-delay: calc(82 * 0.02s);
+  }
+  .card:nth-child(83) {
+    animation-delay: calc(83 * 0.02s);
+  }
+  .card:nth-child(84) {
+    animation-delay: calc(84 * 0.02s);
+  }
+  .card:nth-child(85) {
+    animation-delay: calc(85 * 0.02s);
+  }
+  .card:nth-child(86) {
+    animation-delay: calc(86 * 0.02s);
+  }
+  .card:nth-child(87) {
+    animation-delay: calc(87 * 0.02s);
+  }
+  .card:nth-child(88) {
+    animation-delay: calc(88 * 0.02s);
+  }
+  .card:nth-child(89) {
+    animation-delay: calc(89 * 0.02s);
+  }
+  .card:nth-child(90) {
+    animation-delay: calc(90 * 0.02s);
+  }
+  .card:nth-child(91) {
+    animation-delay: calc(91 * 0.02s);
+  }
+  .card:nth-child(92) {
+    animation-delay: calc(92 * 0.02s);
+  }
+  .card:nth-child(93) {
+    animation-delay: calc(93 * 0.02s);
+  }
+  .card:nth-child(94) {
+    animation-delay: calc(94 * 0.02s);
+  }
+  .card:nth-child(95) {
+    animation-delay: calc(95 * 0.02s);
+  }
+  .card:nth-child(96) {
+    animation-delay: calc(96 * 0.02s);
+  }
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+button {
+  border-radius: 12px;
+  border: none;
+  padding: 0.8em 1.6em;
+  font-size: 1em;
+  font-weight: 600;
+  font-family: inherit;
+  background: var(--primary-gradient);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:focus-visible {
+  outline: 3px solid rgba(102, 126, 234, 0.5);
+  outline-offset: 2px;
+}
+
+/* Game root with flexible layout */
+.game-root {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background: var(--board-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fixed scoreboard at top - always visible */
+.hud {
+  position: relative;
+  z-index: 100;
+  background: linear-gradient(180deg, rgba(15, 20, 25, 0.95) 0%, rgba(15, 20, 25, 0.85) 100%);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: clamp(14px, 2vw, 18px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+}
+
+.scoreboard {
+  display: flex;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  align-items: center;
+}
+
+.scoreboard > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.scoreboard .active {
+  background: rgba(102, 126, 234, 0.2);
+  border: 2px solid #667eea;
+  color: #fff;
+  font-weight: 700;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Flexible board area that adapts to space */
+.board-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(0.5rem, 1vw, 1rem);
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* Responsive organic board layout */
+.board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: clamp(8px, 1.5vw, 20px);
+  padding: clamp(12px, 2vw, 24px);
+  width: 100%;
+  height: 100%;
+  max-width: min(1400px, 95vw);
+  max-height: 100%;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  grid-auto-rows: minmax(0, 1fr);
+}
+
+/* Responsive grid columns based on viewport */
+@media (min-width: 480px) {
+  .board {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .board {
+    grid-template-columns: repeat(10, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .board {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+@media (min-width: 1600px) {
+  .board {
+    grid-template-columns: repeat(14, 1fr);
+    gap: clamp(16px, 2vw, 28px);
+    max-width: min(1800px, 95vw);
+  }
+
+  .hud {
+    font-size: 20px;
+    padding: 1.5rem 3rem;
+  }
+
+  .scoreboard {
+    gap: 3rem;
+  }
+
+  .scoreboard > div {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 2000px) {
+  .board {
+    grid-template-columns: repeat(16, 1fr);
+    gap: clamp(20px, 2.5vw, 36px);
+    max-width: min(2200px, 95vw);
+  }
+
+  .hud {
+    font-size: 24px;
+    padding: 2rem 4rem;
+  }
+
+  .scoreboard {
+    gap: 4rem;
+  }
+
+  .scoreboard > div {
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 3000px) {
+  .board {
+    grid-template-columns: repeat(20, 1fr);
+    gap: 40px;
+    max-width: min(3000px, 95vw);
+  }
+
+  .hud {
+    font-size: 32px;
+    padding: 2.5rem 5rem;
+  }
+
+  .scoreboard {
+    gap: 5rem;
+  }
+
+  .scoreboard > div {
+    padding: 1.5rem 2.5rem;
+    font-size: 2rem;
+  }
+}
+
+/* Beautiful card design with smooth animations */
+.card {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  perspective: 1000px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Elegant card back design */
+.card-front {
+  background: var(--card-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-front::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(102, 126, 234, 0.05) 10px,
+    rgba(102, 126, 234, 0.05) 20px
+  );
+  animation: shimmer 3s linear infinite;
+}
+
+/* Card back with image */
+.card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, #667eea15, #764ba215);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Beautiful home and game over screens */
+.home,
+.gameover {
+  min-height: 100vh;
+  background: radial-gradient(circle at 20% 30%, rgba(102, 126, 234, 0.3), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(245, 87, 108, 0.3), transparent 40%),
+    linear-gradient(180deg, #0f1419 0%, #1a1f2e 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  gap: 2rem;
+  color: white;
+  padding: 2rem;
+}
+
+.podium {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 800;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.home input,
+.home select {
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  border: 2px solid rgba(102, 126, 234, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  width: min(320px, 90vw);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.home input:focus,
+.home select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.home input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.home button,
+.gameover button {
+  background: var(--accent-gradient);
+  border: none;
+  padding: 1rem 3rem;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+  color: white;
+  box-shadow: 0 8px 30px rgba(245, 87, 108, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.home button:hover,
+.gameover button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 40px rgba(245, 87, 108, 0.6);
+}
+
+.home button:active,
+.gameover button:active {
+  transform: translateY(0) scale(1);
+}
+
+/* Smooth mobile adjustments */
+@media (max-width: 640px) {
+  .hud {
+    padding: 0.75rem 1rem;
+    font-size: 12px;
+  }
+
+  .scoreboard {
+    gap: 0.5rem;
+  }
+
+  .scoreboard > div {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
   }
 
   .board {
