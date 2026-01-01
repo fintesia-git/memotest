@@ -25,10 +25,13 @@ export default function App() {
   function handleClick(r, c) {
     const card = board[r][c];
 
-    if (card.faceUp || card.removed) return;
+    if (card.removed) return;
     if (selected.length === 2) return;
+    // prevent selecting same slot twice
+    if (selected.some(s => s.r === r && s.c === c)) return;
 
     const newBoard = board.map(row => row.map(c => ({ ...c })));
+
     newBoard[r][c].faceUp = true;
 
     const newSelected = [...selected, { r, c, card: newBoard[r][c] }];
@@ -143,29 +146,35 @@ export default function App() {
       {/* TABLERO */}
       <div className="board-area">
 
-        <div className="board">
+        <div className="board force-grid">
           {board.map((row, r) =>
-            row.map((card, c) => (
-              <div
-                key={card.code}
-                className={`card ${card.faceUp ? "flipped" : ""}`}
-                onClick={() => handleClick(r, c)}
-              >
-                <div className="card-inner">
-                  <div className="card-front">
-                    <img src="/cards/reverso.png" className="card-img" alt="reverso" />
-                  </div>
-                  <div className="card-back">
-                    <img
-                      src={getCardImage(card.code)}
-                      alt={card.code}
-                      className="card-img"
-                    />
-                  </div>
+            row.map((card, c) => {
+              if (card.removed) {
+                return <div key={`${r}-${c}`} className="card empty" />;
+              }
 
+              return (
+                <div
+                  key={`${r}-${c}`}
+                  className={`card ${card.faceUp ? "flipped" : ""}`}
+                  onClick={() => handleClick(r, c)}
+                >
+                  <div className="card-inner">
+                    <div className="card-front">
+                      <img src="/cards/reverso.png" className="card-img" alt="reverso" />
+                    </div>
+                    <div className="card-back">
+                      <img
+                        src={getCardImage(card.code)}
+                        alt={card.code}
+                        className="card-img"
+                      />
+                    </div>
+
+                  </div>
                 </div>
-              </div>
-            ))
+              );
+            })
           )}
         </div>
       </div>

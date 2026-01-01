@@ -22,6 +22,16 @@ export function generateDeck() {
     }
   }
 
+  // Añadir 4 jokers que emparejan entre sí (cualquiera con cualquiera)
+  for (let i = 0; i < 4; i++) {
+    deck.push({
+      code: `joker`,
+      matchKey: `joker`,
+      faceUp: false,
+      removed: false
+    });
+  }
+
   return deck;
 }
 
@@ -39,12 +49,15 @@ export function shuffle(array) {
 export function buildBoard() {
   const deck = shuffle(generateDeck());
 
+  // Crear tablero fijo de 10x10 (100 cartas)
+  const rows = 10;
+  const cols = 10;
   const board = [];
   let index = 0;
 
-  for (let row = 0; row < 8; row++) {
+  for (let row = 0; row < rows; row++) {
     const rowArr = [];
-    for (let col = 0; col < 12; col++) {
+    for (let col = 0; col < cols; col++) {
       rowArr.push(deck[index++]);
     }
     board.push(rowArr);
@@ -67,5 +80,6 @@ export function getCardLabel(code) {
 }
 
 export function getCardImage(code) {
+  if (code === 'joker' || code.startsWith('joker')) return `/cards/joker.png`;
   return `/cards/${code}.png`;
 }

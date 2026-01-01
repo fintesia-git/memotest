@@ -207,7 +207,10 @@ button:focus-visible {
 /* Responsive organic board layout */
 .board {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  /* Force a 10-column layout so the board is always 10x10 (100 slots).
+     This overrides the previous responsive auto-fit behavior to keep the
+     matrix complete and predictable. */
+  grid-template-columns: repeat(10, minmax(60px, 1fr));
   gap: clamp(8px, 1.5vw, 20px);
   padding: clamp(12px, 2vw, 24px);
   width: 100%;
@@ -322,6 +325,12 @@ button:focus-visible {
 .card:hover {
   transform: scale(1.05);
   z-index: 10;
+}
+
+/* Empty slot for removed (matched) cards: preserve layout but hide content and disable interactions */
+.card.empty {
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .card-inner {
@@ -803,6 +812,27 @@ button:focus-visible {
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
+  }
+}
+
+/* Force grid sizing: prefer 10x10. On very wide screens use 20 columns (20x5),
+   on very narrow screens use 5 columns (5x20) so the matrix always fills 100 slots. */
+.board.force-grid {
+  grid-template-columns: repeat(10, minmax(60px, 1fr)) !important;
+  gap: clamp(8px, 1.5vw, 20px);
+}
+
+@media (min-width: 1600px) {
+  .board.force-grid {
+    grid-template-columns: repeat(20, minmax(40px, 1fr)) !important;
+    gap: clamp(6px, 1vw, 12px);
+  }
+}
+
+@media (max-width: 700px) {
+  .board.force-grid {
+    grid-template-columns: repeat(5, minmax(40px, 1fr)) !important;
+    gap: clamp(6px, 1vw, 12px);
   }
 }
 
@@ -1481,6 +1511,18 @@ button:focus-visible {
   }
   .card:nth-child(96) {
     animation-delay: calc(96 * 0.02s);
+  }
+  .card:nth-child(97) {
+    animation-delay: calc(97 * 0.02s);
+  }
+  .card:nth-child(98) {
+    animation-delay: calc(98 * 0.02s);
+  }
+  .card:nth-child(99) {
+    animation-delay: calc(99 * 0.02s);
+  }
+  .card:nth-child(100) {
+    animation-delay: calc(100 * 0.02s);
   }
 }
 
